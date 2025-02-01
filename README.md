@@ -25,3 +25,49 @@
         2. path.join() is used to join two paths
             1st parameter: __dirname => gives the directory address of the script
             2nd parameter: name of the folder we need.
+
+# Interpolation Syntax
+
+    Interpolation refers to embedding expressions into marked up text
+
+    Docs: ejs.co
+    
+    Example:
+        <%= 1+3%> --> gives output 4 in the html
+
+        <%=["name","xyz"][1]%> --> gives xyz
+
+# Passing data into EJS
+
+    Pass the given data as 2nd paramter to the app.render("ejsfile",{varname/data});
+    We can directly pass the variable or we can use a key value pair
+
+# Conditional Statements
+
+    <% if statement { %>
+     what needs to executed if true
+    <%} else { %>
+     what need to be done if false
+    <%}%>
+
+    Example:
+        <% if(num%2==0){%>
+            <h3>Even number</h3>
+        <%}%>
+
+# Loops
+
+    <% loop statement { %>
+        what needs to be done
+    <% } %>
+
+    Example: 
+    <%for(let i=1;i<=10;i++){%>
+            <h4><%= i %></h4>
+    <% } %>
+
+# Using external data
+
+    The data provided is in the form of json or we get it from thr database.
+
+    

@@ -13,3 +13,21 @@ app.set("views",path.join(__dirname,"views"));
 app.get("/",(req,res)=>{
     res.render("home.ejs");
 });
+
+app.get("/rolldice",(req,res)=>{
+    let diceVal = Math.floor(Math.random()*6)+1;
+    res.render("rolldice.ejs",{num:diceVal})
+});
+
+app.get("/ig/:username",(req,res)=>{
+    try {
+    let {username}=req.params;
+    const Alldata = require(path.join(__dirname,"data.json"));
+    const data = Alldata[username];
+    console.log(data);
+    res.render("igpage.ejs",{data});
+    }
+    catch(error){
+        console.log(error);
+    }
+});
