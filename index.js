@@ -24,8 +24,12 @@ app.get("/ig/:username",(req,res)=>{
     let {username}=req.params;
     const Alldata = require(path.join(__dirname,"data.json"));
     const data = Alldata[username];
-    console.log(data);
-    res.render("igpage.ejs",{data});
+    if(!data){
+        res.send("No data found");
+    }
+    else{
+        res.render("igpage.ejs",{data});
+    }
     }
     catch(error){
         console.log(error);
