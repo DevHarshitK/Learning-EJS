@@ -66,8 +66,24 @@
             <h4><%= i %></h4>
     <% } %>
 
-# Using external data
-
-    The data provided is in the form of json or we get it from thr database.
-
+# Serving Static Files
     
+    Sometimes, we may need to send CSS and JS codes along with our html response.
+
+    We can send the data using this method, where express.static is a middleware.
+
+        app.use(express.static(folder_containing_files));
+
+    We generally send these files using this method:
+
+        app.use(express.static(path.join(__dirname,"public")));
+
+    If we have sub-folders then we need to serve them seperately for each sub-folder, in order to use them. Example:
+
+        app.use(express.static(path.join(__dirname,"/public/css")));
+
+        app.use(express.static(path.join(__dirname,"/public/js")));
+
+# Includes
+
+    This is used to include sub templates into the existing templates

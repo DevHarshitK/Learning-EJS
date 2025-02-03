@@ -1,0 +1,14 @@
+button{
+    display: block;
+    margin: 5px;
+}
+ul li {
+    display: inline-block;
+}
+ul{
+    padding: 0.5rem;
+}
+img {
+    height: 200px;
+    width: auto;
+}
